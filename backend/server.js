@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
@@ -6,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const MURF_API_KEY = "ap2_49873870-fbe3-42ec-9c55-252d66d82c6a";
+const MURF_API_KEY = process.env.MURF_API_KEY;
 
 app.post("/tts", async (req, res) => {
   try {
